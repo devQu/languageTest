@@ -1,0 +1,104 @@
+.container__startblock {
+    padding: 1.5rem 2rem;
+    font-size: 1.1rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    min-height: 60vh;
+
+    &__content {
+        flex-flow: column;
+        margin: 0 auto;
+        align-items: center;
+        display: flex;
+
+        &__imgPoppy {
+            margin: 0.5rem auto;
+
+            img {
+                width: 9rem;
+                height: 9rem;
+            }
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        &__label {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+
+            label {
+                display: flex;
+                position: relative;
+                font-weight: 600;
+                font-size: 0.8rem;
+                margin: 0 0.5rem 0.4rem 0;
+                padding: 0.4rem 1.5rem;
+                border-radius: 3px;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    background: #fff;
+                    height: 0.3rem;
+                    width: 0.3rem;
+                    border-radius: 10px;
+                    left: 0.5rem;
+                    top: 0.7rem;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    background: #fff;
+                    border-left: 0.7rem solid;
+                    border-top: 0.8rem solid transparent;
+                    border-bottom: 0.8rem solid transparent;
+                }
+
+                svg {
+                    width: 0.8rem;
+                    padding-right: 0.2rem;
+                }
+            }
+
+            label.count {
+                background: #ffbfab;
+                &:after { border-left-color: #ffbfab; }
+            }
+            label.category {
+                background: #ccc4ff;
+                &:after { border-left-color: #ccc4ff; }
+            }
+            label.difficulty {
+                background: #b6ffb6;
+                &:after { border-left-color: #b6ffb6; }
+            }
+        }
+
+        &__result {
+            font-size: 1.3rem;
+            font-weight: 100;
+            padding: 0.5rem 1.5rem;
+            width: 100%;
+            text-align: center;
+            background: #b6ffb6;
+            border-radius: 50px;
+            color: black;
+        }
+
+        &__notification {
+            margin: 1.2rem auto 0.5rem auto;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+    }
+}

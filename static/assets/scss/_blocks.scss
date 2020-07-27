@@ -1,0 +1,209 @@
+.container__main {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+
+  &__message {
+    display: flex;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    background: #fff;
+    border-radius: 5px;
+
+    .block_null {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      img {
+        width: 1.5rem;
+        min-width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      span {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #2d72d9;
+        margin-left: 0.3rem;
+      }
+    }
+  }
+
+  &__loader {
+    display: flex;
+    margin: 1.5rem auto;
+    
+  }
+
+  &__block {
+    flex: 0 0 90%;
+    margin: 0.5rem auto;
+
+    &__link {
+      text-decoration: none;
+
+      &__subblock {
+        display: flex;
+        position: relative;
+        height: 3rem;
+        max-width: 100%;
+        //margin: 1.5rem 1.5rem 0 1.5rem;
+        //margin: 0 1rem;
+        background: set-color("white");
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1), 0 4px 10px 0 rgba(0,0,0,0.1);
+        cursor: pointer;
+
+        &__pic {
+          position: absolute;
+          width: 4rem;
+          height: 3rem;
+          border-radius: 5px;
+          z-index: 1;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &__text {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          justify-content: center;
+          padding: 0.7rem 0.8rem 0.7rem 4.5rem;
+
+          &:after {
+            content: '';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: set-color("label");
+            @include transition;
+          }
+      
+          &:hover {
+            &::after {
+              opacity: 1;
+            }
+            span {
+              opacity: 1;
+            }
+            p {
+            padding-bottom: 0.5rem;
+            }
+          }
+
+          p {
+            display: flex;
+            flex-grow: 1;
+            font-size: 0.9rem;
+            font-weight: 900;
+            align-items: center;
+            z-index: 1;
+            @include transition;
+          }
+
+          span {
+           // display: flex;
+            display: none;
+            position: absolute;
+            right: 0;
+            margin-right: 0.3rem;
+            opacity: 0;
+            flex-grow: 0;
+          //  width: 2.5rem;
+          //  height: 2.5rem;
+            align-items: center;
+          //  border-radius: 50px;
+          //  background: set-color("white");
+            @include transition;
+            z-index: 1;
+  
+            svg {
+                height: 1.5rem;
+                margin-left: 0.5rem;
+            }
+          }
+        }     
+      } // subblock
+    }
+
+    &:first-child {
+      margin-top: 1rem;
+    }
+
+    &:last-child {
+        margin-bottom: 1.5rem;
+      //  margin-left: 0;
+    }
+  } // block
+}
+
+$color-back: #e8e8e8;
+
+.avatar-container{
+    position: relative;
+    display: flex;
+  //  display: none;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 2.5rem;
+    width: 2.5rem;
+    min-width: 2.5rem;
+    padding: 0;
+    margin: auto 1rem;
+    margin-left: auto;
+    border: none;
+    background: $color-back;
+    align-items: center;
+    cursor: pointer;
+  
+    .avatar{
+      display: block;
+      margin: 0 auto;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      overflow: hidden;
+      z-index: 0;
+  
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  
+  /**
+  * Function to generate procentual progress classes 
+  * .p-1 1% -> p-100 100%
+  **/
+  $step: 1;
+  $loops: round(100 / $step);
+  $increment: 360 / $loops;
+  $half: round($loops / 2);
+  
+  @for $i from 1 through $loops {
+  
+    .p-#{$i*$step} {
+  
+      @if $i < $half {
+        $nextdeg: 90deg +  ( $increment * $i ) ;
+  
+        background-image: linear-gradient(90deg, $color-back 50%, transparent 50%, transparent), linear-gradient($nextdeg, set-color("fblue2") 50%, $color-back 50%, $color-back);
+  
+      } @else {
+        $nextdeg: -90deg + ( $increment * ( $i - $half ) );
+  
+        background-image: linear-gradient($nextdeg, set-color("fblue2") 50%, transparent 50%, transparent), linear-gradient(270deg, set-color("fblue2") 50%, $color-back 50%, $color-back);
+  
+      }    
+    }
+  
+  }

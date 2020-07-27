@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="container__progress-bar">
+	<section class="progress-line" >
+		<ol class="progress-bar-ol">
+			<li class="complete"><span>Шаг 1</span></li>
+			<li class="complete"><span>Шаг 2</span></li>
+			<li class="wasted"><span>Шаг 3</span></li>
+			<li class="active"><span>Шаг 4</span></li>
+			<li><span>Шаг 5</span></li>
+			<li><span>Шаг 6</span></li>
+			<li><span>Шаг 7</span></li>
+			<li><span>Шаг 8</span></li>
+			<li><span>Шаг 9</span></li>
+			<li><span>Шаг 10</span></li>
+			<li><span>Шаг 11</span></li>
+			<li><span>Шаг 12</span></li>
+			<li><span>Шаг 13</span></li>
+			<li><span>Шаг 14</span></li>
+			<li><span>Шаг 15</span></li>
+			<li><span>Шаг 16</span></li>
+			<li><span>Шаг 17</span></li>
+			<li><span>Шаг 18</span></li>
+			<li><span>Шаг 19</span></li>
+			<li><span>Шаг 20</span></li>
+		</ol>
+	</section>
+	<section class="progress-point">
+		<a href="#" class="back-arrow"></a>
+		<div class="progress-point__item">Шаг 4</div>
+		<!--<a href="#" class="next-arrow"></a> -->
+		<div class="progress-point__aide">
+			<a href="#">Теория</a>
+		</div>
+	</section>
+</div>
+<div class="container__content">
+	<div class="question">
+		Вставьте пропущенное слово в passé composé
+	</div>
+
+	{{ testItem.if_pay }}
+	<div class="example">
+		<span class="sign"></span>
+		J'ai mangé il n'y a pas longtemps 
+	</div>
+	<form action="">
+		J'ai 
+		<div class="input-box">
+			<input type="text" name="" required="" spellcheck="false" autocomplete="off" placeholder="faire" maxlength="15" class="input-word" >
+			<div class="input-hidden"></div>
+		</div>
+		ces exercises.
+	</form>
+	<form action="">
+		Elle est 
+		<div class="input-box">
+			<input type="text" name="" required="" spellcheck="false"  autocomplete="off" placeholder="venir" maxlength="15" class="input-word" >
+			<div class="input-hidden"></div>
+		</div>
+		à la maison très tard.
+	</form>
+	<form action="">
+		Nous sommes 
+		<div class="input-box">
+			<input type="text" name="" required="" spellcheck="false"  autocomplete="off" placeholder="arriver" maxlength="15" class="input-word" >
+			<div class="input-hidden"></div>
+		</div>
+		au cinema enfin!
+	</form>
+	<form action="">
+		J'ai 
+		<div class="result-true">
+			fait
+		</div>
+		ces exercises.
+	</form>
+	<form action="">
+		Elle est 
+		<div class="result-false">
+			venu
+		</div>
+		à la maison très tard.
+	</form>
+	<form action="">
+		Nous sommes 
+		<div class="result-true">
+			arrivé
+		</div>
+		au cinema enfin!
+	</form>
+	<form action="" id="go">
+	<div class="container__content__button">
+		<div class="circles">
+			<button class="particles-button" type="">Готово</button>
+		</div>
+	</div>
+	</form>
+</div>
+
+{% endblock %}
+			

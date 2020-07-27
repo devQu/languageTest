@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+	<div class="container__progress-bar" style="display: none;"></div>
+	<div class="container__startblock">
+		<div class="container__startblock__content">
+			<div class="container__startblock__content__imgPoppy">
+				<img src="{{ object.logo_test.url }}" alt="test_img">
+			</div>
+			<h1>{{ object.title }}</h1>
+			<div class="container__startblock__content__label">
+				<label for="id_count" class="count">Длительность: {{ object.quantity }}</label>
+				<label for="id_category" class="category">
+					{% if object.type_category.title == "Grammaire" %} Грамматический 
+					{% elif object.type_category.title == "Thematic" %} Тематический
+					{% endif %}
+				</label>
+				<label for="id_difficulty" class="difficulty">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+						<g fill="none" fill-rule="evenodd">
+							<path d="M0 0h32v32H0z"></path>
+							<rect width="6" height="10" x="5" y="17" fill="currentColor" rx="2"></rect>
+							<rect width="6" height="16" x="13" y="11" fill="currentColor" rx="2" opacity=".3"></rect>
+							<rect width="6" height="22" x="21" y="5" fill="currentColor" rx="2" opacity=".3"></rect>
+						</g>
+                    </svg>
+                    {% if object.complexity.title == "1" %} Лёгкий 
+					{% elif object.complexity.title == "2" %} Средний 
+					{% elif object.complexity.title == "3" %} Сложный
+					{% endif %}
+                </label>
+			</div>
+			<p>&#9;{{ object.description }}</p>
+			<div class="container__content__block__button button-center">
+				<div class="circles">
+					<button id="gotest" class="particles-button" type="">Приступить!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container__content" style="display: none;">
+		<div class="container__content__theory" >
+		</div>
+		<div class="container__content__block">
+			<form action="" id="form_questions" method="GET">
+			</form>
+		</div>
+	</div>
+
+	<!--<script async src="{% static 'assets/js/no-aside.js' %}"></script>-->
+	<script src="{% static 'assets/js/ajax_runtest.js' %}"></script>
+
+{% endblock %}

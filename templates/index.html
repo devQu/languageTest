@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container__top">
+	<div class="header">Доступные курсы</div>
+	<form id="filterForm" method="GET" action="." >
+		
+		<div class="container__top__filter">
+			<div class="container__top__filter__option open">
+				<input id="select_diff" type="text" value="all" readonly name="difficulty_contains">
+				<strong>
+					<span>Все</span>
+				</strong>
+				<span class="helptext">Все</span>
+			</div>
+			<div class="container__top__filter__option">
+				<span>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+						<g fill="none" fill-rule="evenodd">
+							<path d="M0 0h32v32H0z"></path>
+							<rect width="6" height="10" x="5" y="17" fill="currentColor" rx="2"></rect>
+							<rect width="6" height="16" x="13" y="11" fill="currentColor" rx="2" opacity=".3"></rect>
+							<rect width="6" height="22" x="21" y="5" fill="currentColor" rx="2" opacity=".3"></rect>
+						</g>
+					</svg>
+				</span>
+				<span class="helptext">Лёгкий <br>уровень</span>
+			</div>
+			<div class="container__top__filter__option">
+				<span>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+						<g fill="none" fill-rule="evenodd">
+							<path d="M0 0h32v32H0z"></path>
+							<rect width="6" height="10" x="5" y="17" fill="currentColor" rx="2"></rect>
+							<rect width="6" height="16" x="13" y="11" fill="currentColor" rx="2"></rect>
+							<rect width="6" height="22" x="21" y="5" fill="currentColor" rx="2" opacity=".3"></rect>
+						</g>
+					</svg>
+				</span>
+				<span class="helptext">Средний <br>уровень</span>
+			</div>
+			<div class="container__top__filter__option">
+				<span>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+						<g fill="none" fill-rule="evenodd">
+							<path d="M0 0h32v32H0z"></path>
+							<rect width="6" height="10" x="5" y="17" fill="currentColor" rx="2"></rect>
+							<rect width="6" height="16" x="13" y="11" fill="currentColor" rx="2"></rect>
+							<rect width="6" height="22" x="21" y="5" fill="currentColor" rx="2"></rect>
+						</g>
+					</svg>
+				</span>
+				<span class="helptext">Сложный <br>уровень</span>
+			</div>
+		</div>
+		<div class="container__top__select">
+			<div class="container__top__select__main">
+				<input id="select_main" type="text" value="Грамматические тесты" readonly autocomplete="off" name="categories_contains">
+				<div class="container__top__select__main__sign">
+					<span class="select_open">
+						<svg id="select_main_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+							<path d="M4.516 7.548c.436-.446 1.043-.481 1.576 0L10 11.295l3.908-3.747c.533-.481 1.141-.446 1.574 0 .436.445.408 1.197 0 1.615-.406.418-4.695 4.502-4.695 4.502a1.095 1.095 0 0 1-1.576 0S4.924 9.581 4.516 9.163c-.409-.418-.436-1.17 0-1.615z" fill="currentColor"></path>
+						</svg>
+					</span>
+					<span class="select_close">
+						<svg id="select_main_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+							<path d="M15.484 12.452c-.436.446-1.043.481-1.576 0L10 8.705l-3.908 3.747c-.533.481-1.141.446-1.574 0-.436-.445-.408-1.197 0-1.615.406-.418 4.695-4.502 4.695-4.502a1.095 1.095 0 0 1 1.576 0s4.287 4.084 4.695 4.502c.409.418.436 1.17 0 1.615z" fill="currentColor"></path>
+						</svg>
+					</span>
+				</div>
+			</div>
+			
+			<div class="container__top__select__area">
+				<div class="container__top__select__area__item">Грамматические тесты</div>
+				<div class="container__top__select__area__item">Тематические курсы</div>
+				<div class="container__top__select__area__item">Словари</div>
+			</div>
+		</div>
+		<div class="container__top__search">
+			<div class="container__top__search__main">
+				<input id="search_contains" placeholder="Найти" type="text" name="title_contains" value="">
+				<div class="container__top__search__main__sign">
+					<span>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2" transform="translate(4 5)">
+								<circle cx="9" cy="6" r="5"></circle>
+								<path d="M5 10l-4 4"></path>
+							</g>
+						</svg>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="container__top__checkpoint">
+			
+			<input type="checkbox" id="optionb" name="already_viewed_contain" value="on">
+			<label for="optionb">Скрыть изученное
+				<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+					<path d="M30,30 L80,30 L20,50 L80,50 L30,70 L70,70" />
+				</svg>
+			</label>
+			<!--	
+			<span class="box"></span>
+			<span class="check"></span>
+			<span class="text">Скрыть изученное</span>
+			-->
+		</div>
+		<div class="container__top__submit">
+			<button type="submit" name="submit">Поиск</button>
+		</div>
+	</form>
+	<!--
+	<button id="filtAc">Поиск</button>
+	<button id="filtList">Поиск</button>
+	-->
+</div>
+
+<div class="container__main">
+
+	{% for item in tests_items %}
+
+	<div class="container__main__block">
+		<a href="{{ item.get_absolute_url }}" class="container__main__block__link">
+			<div class="container__main__block__link__subblock">
+				<span class="container__main__block__link__subblock__pic">
+					<img src="{{ item.logo_test.url }}" alt="">
+				</span>
+				<div class="container__main__block__link__subblock__text">
+					<p>{{ item.title }}</p>
+					<span>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+							<g fill="none" fill-rule="evenodd">
+								<path d="M0 0h32v32H0z"></path>
+								<rect width="6" height="10" x="5" y="17" fill="currentColor" rx="2"></rect>
+								<rect width="6" height="16" x="13" y="11" fill="currentColor" rx="2"></rect>
+								<rect width="6" height="22" x="21" y="5" fill="currentColor" rx="2" opacity=".3"></rect>
+							</g>
+						</svg>
+					</span>
+				</div>
+				<div class="container__main__block__link__subblock__progress avatar-container p-10">
+					<img src="{% static 'assets/images/cup.png' %}" alt="" class="avatar"/>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	{% endfor %}
+	
+	{% for i in data %}
+		<p>{{ i.title }}</p>
+		<p></p>
+		<p>{{ i.quantity }}</p>
+	{% endfor %}
+
+</div>
+			
+{% endblock %}

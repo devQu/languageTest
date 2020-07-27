@@ -1,0 +1,54 @@
+.foot {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0.7rem 0;
+
+    &__item {
+        padding-bottom: 1rem;
+        font-size: 0.9rem;
+
+        .head-main {
+            color: set-color("white");
+        }
+    }
+
+    .social-links {
+        &__link {
+            &__span {
+                margin-left: 1rem;
+
+                svg {
+                    width: 1.8rem;
+                    height: 1.8rem;
+
+                    &:hover {
+                        transform: scale(1.2, 1.2);
+                        @include transition;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.copyright {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+    background: set-color("copyright");
+    font-size: 0.8rem;
+
+    &__sign {
+        font-weight: 500;
+        padding: 0.5rem 0;
+    }
+
+    &__dev {
+        padding: 0;
+    }
+}

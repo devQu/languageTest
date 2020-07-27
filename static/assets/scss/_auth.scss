@@ -1,0 +1,126 @@
+.container__auth {
+    margin: 0 auto;
+    min-height: 80vh;
+    width: 70%;
+    min-width: 70%;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+
+    form {
+
+        .top-row {
+            display: flex;
+            flex-flow: row nowrap;
+            align-content: space-around;
+
+            > div {
+
+                &:first-child {
+                    float: left;
+                }
+                &:last-child {
+                    float: right;
+                }
+            }
+        }
+
+        p {
+            display: flex;
+            flex-flow: column wrap;
+            padding: 0.5rem 0.1rem 0 0.1rem;
+
+            > input[type="text"], input[type="password"], input[type="email"] {
+                width: 100%;
+                font-size: 1.2rem;
+                border: none;
+                border-radius: 5px;
+                background: #e7f1ff;
+                padding: 0.2rem 0.3rem;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            > input[type="checkbox"] {
+                padding: 0.2rem 0.3rem;
+                margin: auto 0.5rem;
+                cursor: pointer;
+            }
+
+            input::-webkit-input-placeholder {
+                color: #e7f1ff;
+            }
+            
+            input:active::-webkit-input-placeholder ,
+            input:focus::-webkit-input-placeholder {
+                color: #e7f1ff;
+            }
+            
+            input::-moz-placeholder {
+                color: #e7f1ff;
+            }
+            
+            input:active::-moz-placeholder,
+            input:focus::-moz-placeholder {
+                color: #e7f1ff;
+            }
+            
+            input:-ms-input-placeholder {  
+                color: #e7f1ff;
+            }
+            
+            input:active::-ms-input-placeholder ,
+            input:focus::-ms-input-placeholder {
+                color: #e7f1ff;
+            }
+
+            > label {
+                font-weight: 600;
+                margin-bottom: 0.4rem;
+            }
+        }
+
+        a.secondaryAction {
+            display: block;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: set-color("fblue1");
+        }
+
+        .field-link {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            
+            a {
+                color: set-color("fblue1");
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    h1 {
+        text-align: center;
+        margin: 0 auto 1rem auto;
+        font-size: 1.8rem;
+    }
+
+    /*
+        Effect ZoomInLeft
+        transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        opacity: 0;
+        
+        &:hover {
+            opacity: 1;
+            transform: scale3d(1, 1, 1) translate3d(10px, 0, 0);
+            @include transition;
+        }
+    */
+}

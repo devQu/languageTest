@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+$colors: (
+    "white": #fff, 
+    "black": #000,
+    "fblue1": #2d72d9,
+    "fblue2": #4f96ff,
+    "fgreen1": #20dc49,
+    "active": #98c2ff,
+    "footer_menu": #f1f1f1,
+    "footer_menu2": #dceaff,
+    "filter_border": #dfdfdf,
+    "filter_active": #ebf3fd,
+    "filter_norm": #7e919f,
+    "filter_block": #f1f1f1,
+    "label": #e7f1ff,
+    "transparent": #ffffffa6,
+    "aside": #3c3c3c,
+    "copyright": #365579,
+    "font_form": #365579,
+    "wasted": #e80000,
+    "pr_grey": #d4d4d4,
+    "pr_blue": #cae0ff,
+    "order_word": #98ff97,
+    "desorder_word": #c6deff, 
+    "progress_li": #cae0ff
+);
+
+@font-face { 
+    font-family: 'Nunito-Regular'; 
+    src: url('../fonts/nunito/Nunito-Regular.ttf')  format('truetype'); 
+}
+
+@font-face {
+    font-family: 'BadScript-Regular';
+    src: url('../fonts/badscript/BadScript-Regular.ttf');
+}
+
+@function set-color($name_color) {
+    @return map-get($colors, $name_color);
+}
+
+@mixin transition {
+    transition: all 0.5s ease-in-out;
+}
+
+// Rotate mobile devices
+@mixin rotate-l {
+    @media screen and (max-height: 600px) and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin min-320 {
+    @media screen and (min-width: 320px) {
+        @content;
+    }
+}
+
+@mixin min-400 {
+    @media screen and (min-width: 400px) {
+        @content;
+    }
+}
+
+@mixin min-500 {
+    @media screen and (min-width: 500px) {
+        @content;
+    }
+}
+
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin min-1300 {
+    @media screen and (min-width: 1300px) {
+        @content;
+    }
+}
+
+@mixin min-1450 {
+    @media screen and (min-width: 1450px) {
+        @content;
+    }
+}
+
+@mixin media-xlg {
+    @media screen and (min-width: 1600px) {
+        @content;
+    }
+}

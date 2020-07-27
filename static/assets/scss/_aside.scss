@@ -1,0 +1,110 @@
+.aside-block {
+
+    .word:hover {
+        
+        .aside-span__text i {
+            border-bottom: 2px dotted set-color('white');
+            font-weight: 600;
+            @include transition;
+        }
+    }
+
+    &__item {
+        padding: 1rem 1rem;
+        margin: 1rem 1rem 0.5rem 1rem;
+        background: set-color("fblue1");
+        //border: 2px solid #dfdfdf;
+        border-radius: 5px;
+        //box-shadow: inset 7px 7px 4px 0px rgba(255, 255, 255, 0.1), inset -7px -7px 4px 0 rgba(0, 0, 0, 0.1);
+        @include transition;
+        /*
+        &:first-child {
+            border-radius: 10px 10px 0 0;
+        }
+
+        &:last-child {
+            border-radius: 0 0 10px 10px;
+        }
+        */
+        &:hover {
+            background: set-color("fblue2");
+            @include transition;
+        }
+
+        .aside-link {
+            text-decoration-line: none;
+
+            .aside-span {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: set-color("white");
+                font-variant: all-small-caps;
+                text-shadow: #ffffff40 1px 1px;
+                @include transition;
+
+                &__text {
+                    margin: auto 0;
+                    padding-left: 1rem;
+
+                    i {
+                        color: set-color('white');
+                        font-weight: 300;
+                        text-shadow: none;
+                        border-bottom: 1px dotted set-color('white');
+                        @include transition;
+                    }
+                }
+
+                &__img-today {
+                    //background: url('../img/svg/smartphone.svg') no-repeat center;
+                    min-width: 1.5rem;
+                    position: relative;
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    //margin: auto 0.3rem;
+
+                    svg {
+                        stroke: set-color("white");
+                        fill: set-color("white");
+                    }
+                }
+
+                &__img-word {
+                    //background: url('../img/svg/word.svg') no-repeat;
+                    min-width: 1.5rem;
+                    position: relative;
+                    height: 1.5rem;
+                    width: 1.5rem;
+
+                    svg {
+                        stroke: set-color("white");
+                        fill: set-color("white");
+                    }
+                }
+            }
+        }
+    }
+
+    &__item:first-child {
+        margin-top: 1.2rem;
+    }
+}
+
+.aside-article {
+
+    &__item {
+
+        &__logo {
+            width: 89%;
+            margin: auto;
+            border-radius: 10px;
+            height: 140px;
+            background: black;
+            top: 0;
+            background: url(/dist/img/p.jpg) no-repeat center;
+        }
+    }
+}

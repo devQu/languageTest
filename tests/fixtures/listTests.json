@@ -1,0 +1,356 @@
+[
+    {
+        "model": "tests.typeCategory",
+        "pk": 0,
+        "fields": {
+            "title": "Grammaire"
+        }
+    },
+    {
+        "model": "tests.typeCategory",
+        "pk": 1,
+        "fields": {
+            "title": "Thematic"
+        }
+    },
+    {
+        "model": "tests.complexity",
+        "pk": 0,
+        "fields": {
+            "title": "1"
+        }
+    },
+    {
+        "model": "tests.complexity",
+        "pk": 1,
+        "fields": {
+            "title": "2"
+        }
+    },
+    {
+        "model": "tests.complexity",
+        "pk": 2,
+        "fields": {
+            "title": "3"
+        }
+    },
+    {
+        "model": "tests.typeQuestion",
+        "pk": 0,
+        "fields": {
+            "title": "order"
+        }
+    },
+    {
+        "model": "tests.typeQuestion",
+        "pk": 1,
+        "fields": {
+            "title": "choise"
+        }
+    },
+    {
+        "model": "tests.typeQuestion",
+        "pk": 2,
+        "fields": {
+            "title": "insert"
+        }
+    },
+    {
+        "model": "tests.typeQuestion",
+        "pk": 3,
+        "fields": {
+            "title": "theory"
+        }
+    },
+    {
+        "model": "tests.testMassif",
+        "pk": 0,
+        "fields": {
+            "test_name": "Passé Composé",
+            "theory_json": {
+                "0": {"_header": "Знакомство с Passé Composé."},
+                "1": {"_image": "test_images/651081081011143297117329910511010110997_iHIHdOU.png"},
+                "2": {"_text": {
+                    "_text_domain": "Форма глаголов Passé Composé во французском языке создаётся очень просто и легко!"
+                }},
+                "3": {"_example": {
+                    "0": {"_example_domain": "Elle ^ des fruits.", "_example_append": ["a mangée"]},
+                    "1": {"_example_domain": "Poppy ^ de dormir sous le soleil.", "_example_append": ["a aimée"]}
+                }},
+                "4": {"_subheader": "Различия с формами глаголов"},
+                "5": {"_text": {
+                    "_text_domain": "Бывают разные формы построения Passé Composé, строящиейся в зависимоси от формы глагола. Могут быть задействованы вспомагательные глаголы: ^ и ^",
+                    "_text_append": ["etre", "avoir"]   
+                }},
+                "6": {"_example": {
+                    "0": {"_example_domain": "Robert ^ a la gare.", "_example_append": ["est arrivé"]},
+                    "1": {"_example_domain": "Nous ^ ce projet", "_example_append": ["avons fini"]}
+                }}
+            },
+            "type_question_id": 3
+            
+        }
+    },
+    {
+        "model": "tests.testMassif",
+        "pk": 1,
+        "fields": {
+            "test_name": "Passé Composé",
+            "question": "Заполните пропущенные места в предложениях.",
+            "type_question_id": 2,
+            "text_answers_json": {
+                "0": {"text": "J'ai / le menage. Tu / sens bien.", "answers": ["fait", "te"]},
+                "1": {"text": "Vous allez / quoi / ma voiture ?", "answers": ["faire", "avec"]}
+            },
+            "insert_json": {
+                "0": ["faire", "me"],
+                "1": [ "aller", "chez"]
+            },
+            "examples_json": ["Poppy a fait le devoir.", "Chloé dessins des images !"],
+            "style_type": "C"
+        }
+    },
+    {
+        "model": "tests.testMassif",
+        "pk": 2,
+        "fields": {
+            "test_name": "Passé Composé",
+            "question": "Расставьте слова по порядку чтобы получилось предложение.",
+            "type_question_id": 0,
+            "order_list": ["Est-ce", "que", "vous", "lisez", "des", "journaux", "?"],
+            "examples_json": ["Est-ce que tu va manger dans l'apres-midi ?"],
+            "style_type": "C"
+        }
+    },
+    {
+        "model": "tests.testMassif",
+        "pk": 3,
+        "fields": {
+            "test_name": "Passé Composé",
+            "question": "Расставьте слова по порядку чтобы получилось предложение.",
+            "type_question_id": 0,
+            "order_list": ["Le", "mur", "est", "couvert", "de", "taches", "de", "haut", "en", "bas"],
+            "examples_json": ["Est-ce que tu va manger dans l'apres-midi ?"],
+            "style_type": "C"
+        }
+    },
+    {
+        "model": "tests.testMassif",
+        "pk": 4,
+        "fields": {
+            "test_name": "Passé Composé",
+            "question": "Заполните пропущенные места в предложениях.",
+            "type_question_id": 2,
+            "text_answers_json": {
+                "0": {"text": "Tu as / ce que tu faisais ? Ils ne comprennent / pourquoi ..", "answers": ["fini", "pas"]}
+            },
+            "insert_json": {
+                "0": ["finir", "non"]
+            },
+            "examples_json": ["J'aime trop ce pull."],
+            "style_type": "C"
+        }
+    },
+    {
+        "model": "tests.testMassif",
+        "pk": 5,
+        "fields": {
+            "test_name": "Passé Composé",
+            "question": "Заполните пропущенные места в предложениях.",
+            "type_question_id": 2,
+            "text_answers_json": {
+                "0": {"text": "Donne-moi / robe. Elle se / dans la salle de bains !", "answers": ["ta", "lave"]},
+                "1": {"text": "Elle est / chez sa copine vers 6 heures.", "answers": ["venu"]}
+            },
+            "insert_json": {
+                "0": ["ma", "laver"],
+                "1": ["venir"]
+            },
+            "examples_json": ["Poppy n'aime pas ce fromage!."],
+            "style_type": "D"
+        }
+    },
+    {
+        "model": "tests.testMassif",
+        "pk": 6,
+        "fields": {
+            "test_name": "Passé Composé",
+            "theory_json": {
+                "0": {"_header": "Что же дальше с Passé Composé?"},
+                "1": {"_image": "test_images/651081081011143297117329910511010110997_iHIHdOU.png"},
+                "2": {"_text": {
+                    "_text_domain": "Чтобы продолжить нашу работу с данной темой необходимо учесть множество важных моментов"
+                }},
+                "3": {"_example": {
+                    "0": {"_example_domain": "Elle ^ des fruits.", "_example_append": ["a mangée"]},
+                    "1": {"_example_domain": "Poppy ^ de dormir sous le soleil.", "_example_append": ["a aimée"]}
+                }},
+                "4": {"_subheader": "Различия с формами глаголов"},
+                "5": {"_text": {
+                    "_text_domain": "Бывают разные формы построения Passé Composé, строящиейся в зависимоси от формы глагола. Могут быть задействованы вспомагательные глаголы: ^ и ^",
+                    "_text_append": ["etre", "avoir"]   
+                }},
+                "6": {"_attention": {
+                    "0": {"_attention_domain": "Обратите внимание на глаголы ^ и ^.", "_attention_append": ["faire", "aller"]}
+                }},
+                "7": {"_example": {
+                    "0": {"_example_domain": "Robert ^ a la gare.", "_example_append": ["est arrivé"]},
+                    "1": {"_example_domain": "Nous ^ ce projet", "_example_append": ["avons fini"]}
+                }}
+            },
+            "type_question_id": 3
+        }
+    },
+    {
+        "model": "tests.testMassif",
+        "pk": 7,
+        "fields": {
+            "test_name": "Passé Composé",
+            "question": "Выберите правильный вариант из предложенных.",
+            "type_question_id": 1,
+            "text_answers_json": {
+                "0": {"text": "Secrétariat du docteur Ravez, / .", "answers": ["bonjour"]},
+                "1": {"text": "Bonjour, Madame, est-ce que je peux / rendez-vous / le docteur Pasteur ?", "answers": ["prendre", "avec"]},
+                "2": {"text": "Est-ce que c'est / ? Vous etes / ?", "answers": ["urgent", "souffrant"]}
+            },
+            "choise_json": {
+                "0": [["salut", "Au revoir", "Donc"]],
+                "1": [["manger", "sortir", "comprendre"], ["de", "sans", "pour"]],
+                "2": [["bientot", "vite", "cool"], ["bien", "assez", "incroyable"]]
+            },
+            "examples_json": ["Poppy aime beaucoup ce fromage!"],
+            "style_type": "D"
+        }
+    },
+    {
+        "model": "tests.testMassif",
+        "pk": 8,
+        "fields": {
+            "test_name": "Passé Composé",
+            "question": "Выберите правильный вариант из предложенных.",
+            "type_question_id": 1,
+            "text_answers_json": {
+                "0": {"text": "J'ai viens d'avoir une / cordiaque.", "answers": ["crise"]},
+                "1": {"text": "Parlez-m' / en détail.", "answers": ["en"]}
+            },
+            "choise_json": {
+                "0": [["brise", "cerise", "analyse", "caprise"]],
+                "1": [["y", "on", "pour", "son", "alors"]]
+            },
+            "examples_json": ["Poppy n'aime pas ce fromage!"],
+            "style_type": "C"
+        }
+    },
+    {
+        "model": "tests.testMassif",
+        "pk": 9,
+        "fields": {
+            "test_name": "Passé Simple",
+            "question": "ddddd?",
+            "type_question_id": 1,
+            "text_answers_json": {
+                "0": {"text": "Donne-moi / robe. Elle se / dans la salle de bains !", "answers": ["ta", "lave"]}
+            },
+            "examples_json": ["Poppy n'aime pas ce fromage!."]
+        }
+    },
+    {
+        "model": "tests.testMassif",
+        "pk": 10,
+        "fields": {
+            "test_name": "Passé Simple",
+            "question": "EEEE?",
+            "type_question_id": 2,
+            "text_answers_json": {
+                "0": {"text": "Donne-moi / robe. Elle se / dans la salle de bains !", "answers": ["ta", "lave"]}
+            },
+            "examples_json": ["Poppy n'aime pas ce fromage!."]
+        }
+    },
+    {
+        "model": "tests.testMassif",
+        "pk": 11,
+        "fields": {
+            "test_name": "Passé Simple",
+            "question": "fffff?",
+            "type_question_id": 2,
+            "text_answers_json": {
+                "0": {"text": "Donne-moi / robe. Elle se / dans la salle de bains !", "answers": ["ta", "lave"]}
+            },
+            "examples_json": ["Poppy n'aime pas ce fromage!."]
+        }
+    },
+    {
+        "model": "tests.testMassif",
+        "pk": 12,
+        "fields": {
+            "test_name": "Passé Simple",
+            "question": "gggg?",
+            "type_question_id": 1,
+            "text_answers_json": {
+                "0": {"text": "Donne-moi / robe. Elle se / dans la salle de bains !", "answers": ["ta", "lave"]}
+            },
+            "examples_json": ["Poppy n'aime pas ce fromage!."]
+        }
+    },
+    {
+        "model": "tests.listTests",
+        "pk": 0,
+        "fields": {
+            "title": "Passé Composé",
+            "complexity_id": 0,
+            "type_category_id": 0,
+            "if_pay": "False",
+            "description": "Освойте крайне полезный грамматический курс по Passé Composé. Данная форма глагола встречается повсместно во французском языке.",
+            "logo_test": "test_images/651081081011143297117329910511010110997_iHIHdOU.png"
+        }
+    },
+    {
+        "model": "tests.listTests",
+        "pk": 1,
+        "fields": {
+            "title": "Plus Que Parfait",
+            "complexity_id": 0,
+            "type_category_id": 0,
+            "if_pay": "False",
+            "description": "Incroyable test !!!",
+            "logo_test": "test_images/651081081011143297117329910511010110997_iHIHdOU.png"
+        }
+    },
+    {
+        "model": "tests.listTests",
+        "pk": 2,
+        "fields": {
+            "title": "Passé Simple",
+            "complexity_id": 0,
+            "type_category_id": 0,
+            "if_pay": "False",
+            "description": "Круто невероятно ...",
+            "logo_test": "test_images/651081081011143297117329910511010110997_iHIHdOU.png"
+        }
+    },
+    {
+        "model": "tests.listTests",
+        "pk": 3,
+        "fields": {
+            "title": "Subjonctif",
+            "complexity_id": 2,
+            "type_category_id": 0,
+            "if_pay": "True",
+            "description": "Чумовая жесть а не тест !!!",
+            "logo_test": "test_images/651081081011143297117329910511010110997_iHIHdOU.png"
+        }
+    },
+    {
+        "model": "tests.listTests",
+        "pk": 4,
+        "fields": {
+            "title": "Aller au cinema",
+            "complexity_id": 1,
+            "type_category_id": 1,
+            "if_pay": "False",
+            "description": "Потрясающе жёсткий тестик ..",
+            "logo_test": "test_images/651081081011143297117329910511010110997_iHIHdOU.png"
+        }
+    }
+]

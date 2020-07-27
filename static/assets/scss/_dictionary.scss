@@ -1,0 +1,131 @@
+.container__dictionary {
+
+    margin: 0 auto;
+    min-height: 80vh;
+    width: 70%;
+    min-width: 70%;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+
+    .word-name {
+        display: flex;
+        flex-flow: row nowrap;
+        margin: 0 auto;
+
+        .desc {
+            display: block;
+            margin: auto;
+            padding-left: 0.5rem;
+            color: set-color("fblue2");
+            font-size: 1.8rem;
+            font-family: 'BadScript-Regular';
+            white-space: nowrap;
+        }
+
+        .sound-link {
+            background: url('../img/svg/sound.svg') no-repeat;
+            margin: auto 0 auto 0.5rem;
+            height: 2rem;
+            width: 2rem;
+            min-width: 2rem;
+            cursor: pointer;
+        }
+    }
+
+    .tags {
+        margin: 0.5rem auto;
+
+        .tag {
+            display: inline-block;
+            position: relative;
+            background: set-color("pr_blue");
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            border-radius: 3px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                background: set-color("white");
+                height: 0.3rem;
+                width: 0.3rem;
+                border-radius: 10px;
+                left: 0.5rem;
+                top: 0.8rem;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                background: set-color("white");
+                border-left: 0.7rem solid set-color("pr_blue");
+                border-top: 1rem solid transparent;
+                border-bottom: 1rem solid transparent;
+            }
+        }
+    }
+
+    .add {
+        display: flex;
+        flex-flow: row nowrap;
+        margin: 0.5rem auto 0.5rem auto;
+
+        > a {
+            background: set-color("fblue1");
+            color: set-color("white");
+            padding: 0.5rem;
+            font-weight: 600;
+        }
+
+        &__button {
+            border-radius: 0 3px 3px 0;
+        }
+
+        &__sign {
+            border-right: 2px solid set-color("pr_blue");
+            border-radius: 3px 0 0 3px;
+        }
+    }
+
+    .context-block {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        font-size: 1.2rem;
+        padding: 0.5rem 0.8rem;
+        margin-bottom: 0.5rem;
+        color: set-color("fblue1");
+
+        &__item {
+            display: flex;
+            flex-flow: column nowrap;
+            margin: 0 auto 0.5rem auto;
+
+            &__top {
+                display: flex;
+                flex-flow: row nowrap;
+
+                &__sign {
+                    background: url(../img/svg/info.svg) center no-repeat;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    margin-right: 0.5rem;
+                }
+                &__text {
+                    margin: auto 0;
+                }
+            }
+
+            &__bottom {
+                font-style: italic;
+                font-size: 1.1rem;
+                color: #243248;
+                padding-left: 2rem;
+            }
+        }
+    }
+}

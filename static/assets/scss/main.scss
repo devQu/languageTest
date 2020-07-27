@@ -1,0 +1,128 @@
+@import 'config'; /* Variables, mixins, fonts */
+@import 'menu';
+@import 'filters';
+@import 'blocks';
+@import 'progress';
+@import 'aside';
+@import 'footer';
+@import 'formOptions';
+@import 'dictionary';
+@import 'auth'; /* for allauth templates */
+@import 'startTestBlock'; /* Start Test court annotation */
+@import 'profile';
+
+//*, *:before, *:after {
+//    box-sizing: inherit;
+//}
+
+html {
+    background: url(/dist/img/paris.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+        "head head"
+        "main main"
+        "footer footer";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 61px auto 174px;
+    min-height: 100vh;
+    font-family: 'Nunito-Regular';
+    line-height: 1;
+}
+
+body.no-aside {
+    grid-template-areas: 
+    "head head"
+    "main main"
+    "footer footer";
+    grid-template-rows: 61px auto 174px;
+
+    main {
+        background: set-color("white");
+        //min-height: 94vh;
+    }
+
+    aside {
+        display: none;
+    }
+}
+
+header {
+    grid-area: head;
+    position: relative;
+    width: 100%;
+    z-index: 999;
+    padding: 1rem;
+    background: set-color("filter_block");
+}
+
+main {
+    grid-area: main;
+    width: 100%;
+    background: #ffffffa6;
+    /*
+    position: relative;
+    background-color: #f4fbff;
+    background-repeat: no-repeat;
+    background-attachment: scroll,fixed;
+    background-image: url(/dist/img/bottom-left.png),url(/dist/img/top-right.png);
+    background-position: 0 calc(100% - 0px),100% 0;
+    background-size: 90% auto,80% auto;
+    */
+
+    .container {
+
+        /* no-magic button */
+        .box-button {
+            margin: 1rem auto;
+            display: flex;
+            justify-content: center;
+
+            .form-button {
+                cursor: pointer;
+                position: relative;
+                font-family: 'Nunito-Regular';
+                font-size: 1rem;
+                border-radius: 10px;
+                border: 0;
+                margin: 0;
+                padding: 0.5rem 1rem;
+                color: set-color("white");
+                background: set-color("fblue1");
+
+                &:hover {
+                    background: set-color("fblue2");
+                    @include transition;
+                }
+            }
+        }
+    }
+}
+
+aside {
+    flex-direction: column;
+    grid-area: aside;
+    background: #ffffffa6;
+    display: none;
+}
+
+footer {
+    grid-area: footer;
+    background: set-color("fblue1");
+    color: set-color("white");
+}
+
+a {
+    text-decoration: none;
+    color: set-color("black");
+}
+
+// RESPONSIVE is only in the end of .scss file !!!
+@import 'responsive';
+

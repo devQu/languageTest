@@ -1,0 +1,29 @@
+.container {
+    &__profile {
+        display: flex;
+        flex-flow: column;
+
+        &__aside {
+            display: flex;
+            flex-flow: column;
+            background: #ebf6f8;
+
+            .list {
+                margin-top: 0.5rem;
+                .link-bar {
+                    position: relative;
+                }
+                .list-item {
+                    //border-bottom: 1px solid #e7e7e7;
+                    position: relative;
+                    display: block;
+                    padding: 0.5rem 0;
+                }
+            }
+        }
+
+        &__block {
+            display: flex;
+        }
+    }
+}

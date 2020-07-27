@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+	<div class="container__profile">
+		<div class="container__profile__aside">
+			<div class="account">
+				<img src="{% static '/assets/images/noname.png' %}" alt="avatar" class="accout-avatar">
+				<div class="account-info">Новичок</div>
+			</div>
+			<ul class="list">
+				<li class="list-item">Мой прогресс</li>
+				<li class="list-item">Словарь</li>
+			</ul>
+		</div>
+		<div class="container__profile__block">
+			<div class="chart-work" style="position: relative; height:200px; width:auto">
+				<canvas id="myChart"></canvas>
+			</div>
+		</div>
+	</div>
+
+    <script src="{% static 'assets/chart/Chart.min.js' %}"></script>
+    <script src="{% static 'assets/js/ajax_profile.js' %}"></script>
+    
+{% endblock %}
