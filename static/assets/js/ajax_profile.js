@@ -2,6 +2,7 @@
 
 function httpGet(url) {
     return new Promise(function(resolve, reject) {
+        console.log("adsjkj");
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
         xhr.onload = function() {
@@ -19,6 +20,20 @@ function httpGet(url) {
     });
 }
 
+httpGet('/profile/admin/')
+    .then(
+        response => {
+            
+            let data = response;
+
+            console.log(data)
+        
+        },
+        error => console.log(error)
+    );
+
+
+/*
 httpGet('/profile/api/chart/data/')
     .then(
         response => {
@@ -71,3 +86,5 @@ function chartRun(masUser) {
     });
 
 }
+
+*/

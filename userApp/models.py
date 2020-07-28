@@ -3,6 +3,8 @@
 from django.db import models
 from django.conf import settings
 from django.shortcuts import reverse
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 from jsonfield import JSONField
 from datetime import date
 from django.core.files.storage import FileSystemStorage
@@ -27,9 +29,15 @@ class ListUsers(models.Model):
     date_registration = models.DateField(verbose_name="Дата рег-ции", default=date.today)
     dates_visit_json = JSONField(verbose_name="дата:test #JSON", blank=True, help_text="Даты посещений")
     faq_json = JSONField(verbose_name="дата:FAQtext #JSON", blank=True, help_text="FAQ")
+    slug = models.SlugField(blank=True)
     
     def __str__(self):
         return str(self.user)
+
+    def get_absolute_url(self):
+        return reverse("userApp:user_curr", kwargs={
+            'slug': self.slug
+        })
 
     class Meta:
         verbose_name_plural="Список служебных данных пользователей"
@@ -42,3 +50,13 @@ class ListUsers(models.Model):
             return '(none)'
     avatar_img.short_description = 'Аватар текущего юзера'
     avatar_img.allow_tags = True
+
+@receiver(post_save, sender=ListUsers)
+def set_slug(sender, instance, created, **kwargs):
+    if created:
+        print(instance)
+        print(created)
+        user_current = ListUsers.objects.last()
+
+        user_current.slug = user_current.user.username
+        user_current.save()
