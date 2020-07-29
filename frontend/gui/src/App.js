@@ -19,11 +19,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("/profile/admin")
+    fetch("http://localhost:8000/profile/admin")
       .then(response => {
         if (response.status > 400) {
           return this.setState(() => {
-            return { placeholder: "Something went wrong!" };
+            return { persons: [{name: "ajsd", age: 223}] };
           });
         }
         return response;
@@ -47,7 +47,7 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
-            <Route history={history} path='/profile/admin' component={Profile} />
+            <Route history={history} path='/' component={Profile} />
           </Switch>
         </BrowserRouter>
 
