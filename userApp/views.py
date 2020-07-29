@@ -15,9 +15,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 User = get_user_model()
 
-class ProfileUser(LoginRequiredMixin, DetailView):
+class ProfileUser(DetailView):
 
-    login_url = '/account/login'
+    #login_url = '/account/login'
     model = ListUsers
     template_name = 'profile.html'
 
