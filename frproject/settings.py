@@ -131,11 +131,11 @@ LOGIN_REDIRECT_URL = '/'
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_USE_SSL = True
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'unreal-tabby@yandex.ru'
-EMAIL_HOST_PASSWORD = 'nexx33445kliopakurlykwiedzmin'
+#EMAIL_USE_SSL
+#EMAIL_HOST
+#EMAIL_PORT
+#EMAIL_HOST_USER = DEFAULT_FROM_EMAIL
+#EMAIL_HOST_PASSWORD
 
 SERVER_EMAIL = EMAIL_HOST_USER
 
